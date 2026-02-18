@@ -39,6 +39,20 @@
         color: #000;
         margin-top: -20px;
     }
+	
+	.small-text {
+        font-size: 24px;
+        font-weight: 600;
+        color: #000;
+        margin-top: -20px;
+    }
+	
+	.super-small-text {
+        font-size: 18px;
+        font-weight: 300;
+        color: #000;
+        margin-top: -20px;
+    }
 
 </style>
 </head>
@@ -74,11 +88,14 @@
 	<br>
 	<br>
 	<br>
-	<div class="percentage-text" id="finalizedStatus">❌ NOT FINALIZED</div>
+	<div class="small-text" id="finalizedStatus">❌ NOT FINALIZED</div>
+	<br>
+	<br>
+	<div class="super-small-text" id="finalizedStatusInfo">Last updated at: 7:43pm<div>
 </div>
 
 <script>
-    let percentage = 84; // ===== SET PERCENTAGE HERE =====
+    let percentage = 85; // ===== SET PERCENTAGE HERE =====
 	let finalized = false; // ===== SET STATUS HERE =====
 
     const arc = document.getElementById("progressArc");
@@ -96,6 +113,7 @@
 	
 	if(finalized){
 		finalizedStatus.textContent = "✅ FINALIZED";
+		finalizedStatusInfo.style.display = "none";
 	}else{
 		finalizedStatus.textContent = "❌ NOT FINALIZED";
 	}
