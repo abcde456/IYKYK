@@ -71,10 +71,15 @@
     </svg>
 
     <div class="percentage-text" id="percentDisplay">0%</div>
+	<br>
+	<br>
+	<br>
+	<div class="percentage-text" id="finalizedStatus">❌ NOT FINALIZED</div>
 </div>
 
 <script>
-    let percentage = 86; // ===== SET PERCENTAGE HERE =====
+    let percentage = 84; // ===== SET PERCENTAGE HERE =====
+	let finalized = false; // ===== SET STATUS HERE =====
 
     const arc = document.getElementById("progressArc");
     const text = document.getElementById("percentDisplay");
@@ -88,6 +93,12 @@
     arc.style.strokeDashoffset = offset;
 
     text.textContent = percentage + "%";
+	
+	if(finalized){
+		finalizedStatus.textContent = "✅ FINALIZED";
+	}else{
+		finalizedStatus.textContent = "❌ NOT FINALIZED";
+	}
 </script>
 
 </body>
